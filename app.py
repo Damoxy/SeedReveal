@@ -18,10 +18,10 @@ taken_seeds = set(assignments.values())
 available_players = [p for p in all_players if p not in assignments]
 
 # --- 3. Title ---
-st.title("🏆 Knockout Cup Draw")
+st.title("🏆 S3 Knockout Cup Draw (PlayOffs)")
 
 # --- 4. Current Seed Status with Locked icons ---
-st.subheader("🎲 Current Seed Status")
+st.subheader("Current Seed Status")
 
 cols = st.columns(8)
 for idx, seed in enumerate(st.session_state.shuffled_seeds):
