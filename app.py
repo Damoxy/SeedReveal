@@ -37,6 +37,7 @@ st.subheader("🔐 Enter to Choose Your Tile")
 
 selected_player = st.selectbox("👤 Select your name:", [""] + available_players)
 access_code = st.text_input("🔑 Enter your access code:", type="password")
+link_url = "https://docs.google.com/spreadsheets/d/1UUaWuyXoAkji_72CEpylPSU39w3Fnwsw1uKYRe9sJcQ/edit?gid=1523427535#gid=1523427535"
 
 if st.button("✅ Submit"):
     if not selected_player:
@@ -44,7 +45,7 @@ if st.button("✅ Submit"):
     elif access_code != player_codes.get(selected_player):
         st.warning("❌ Incorrect access code.")
     elif selected_player in assignments:
-        st.success(f"✅ You have already been seeded to **{assignments[selected_player]}**.")
+        st.success(f"✅ You have been seeded to **{assignments[selected_player]}**. "
     else:
         st.session_state.verified_player = selected_player
         st.rerun()
@@ -54,7 +55,7 @@ if "verified_player" in st.session_state:
     player = st.session_state.verified_player
 
     if player in assignments:
-        st.success(f"✅ You have already been seeded to **{assignments[player]}**.")
+        st.success(f"✅ You have been seeded to **{assignments[selected_player]}**. "
     else:
         st.success(f"✅ Welcome {player}! Please select your seed:")
         cols = st.columns(8)
