@@ -37,7 +37,6 @@ st.subheader("🔐 Enter to Choose Your Tile")
 
 selected_player = st.selectbox("👤 Select your name:", [""] + available_players)
 access_code = st.text_input("🔑 Enter your access code:", type="password")
-link_url = "https://docs.google.com/spreadsheets/d/1UUaWuyXoAkji_72CEpylPSU39w3Fnwsw1uKYRe9sJcQ/edit?gid=1523427535#gid=1523427535"
 
 if st.button("✅ Submit"):
     if not selected_player:
