@@ -1,6 +1,6 @@
 import streamlit as st
 from datetime import datetime
-from utils.players import all_players, player_codes
+from utils.players import all_players, player_codes, link_url
 from utils.seeds import get_shuffled_seeds
 from utils.sheet import load_assignments, append_assignment
 
@@ -44,7 +44,7 @@ if st.button("✅ Submit"):
     elif access_code != player_codes.get(selected_player):
         st.warning("❌ Incorrect access code.")
     elif selected_player in assignments:
-        st.success(f"✅ You have already been seeded to **{assignments[selected_player]}**.")
+        st.success(f"You have been seeded to **{assignments[selected_player]}**, you can view the draws [here]({link_url}).")
     else:
         st.session_state.verified_player = selected_player
         st.rerun()
@@ -54,9 +54,9 @@ if "verified_player" in st.session_state:
     player = st.session_state.verified_player
 
     if player in assignments:
-        st.success(f"✅ You have already been seeded to **{assignments[player]}**.")
+        st.success(f"You have been seeded to **{assignments[player]}**, you can view the draws [here]({link_url}).")
     else:
-        st.success(f"✅ Welcome {player}! Please select your seed:")
+        st.success(f"Welcome {player}! Please select your seed:")
         cols = st.columns(8)
 
         for idx, seed in enumerate(st.session_state.shuffled_seeds):
