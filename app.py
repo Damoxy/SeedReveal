@@ -18,10 +18,10 @@ taken_seeds = set(assignments.values())
 available_players = [p for p in all_players if p not in assignments]
 
 # --- 3. Title ---
-st.title("🏆 Knockout Cup Draw")
+st.title("🏆 S3 Knockout Cup Draw (PlayOffs)")
 
 # --- 4. Current Seed Status with Locked icons ---
-st.subheader("🎲 Current Seed Status")
+st.subheader("Current Seed Status")
 
 cols = st.columns(8)
 for idx, seed in enumerate(st.session_state.shuffled_seeds):
@@ -37,6 +37,7 @@ st.subheader("🔐 Enter to Choose Your Tile")
 
 selected_player = st.selectbox("👤 Select your name:", [""] + available_players)
 access_code = st.text_input("🔑 Enter your access code:", type="password")
+link_url = "https://docs.google.com/spreadsheets/d/1UUaWuyXoAkji_72CEpylPSU39w3Fnwsw1uKYRe9sJcQ/edit?gid=1523427535#gid=1523427535"
 
 if st.button("✅ Submit"):
     if not selected_player:
