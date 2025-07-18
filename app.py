@@ -18,7 +18,7 @@ taken_seeds = set(assignments.values())
 available_players = [p for p in all_players if p not in assignments]
 
 # --- 3. Title ---
-st.title("🏆 S3 Knockout Cup Draw (PlayOffs)")
+st.title("🏆 S3 Knockout Cup Draws")
 
 # --- 4. Current Seed Status with Locked icons ---
 st.subheader("Current Seed Status")
